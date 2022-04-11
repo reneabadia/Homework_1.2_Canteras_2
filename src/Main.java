@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+/**
+ * Application that represents a space mission authorization system
+ * @author Rene Abadia
+ */
 public class Main {
 
     public static void main(String[] args) {
@@ -8,8 +12,14 @@ public class Main {
 
         System.out.println("Software to create spacecrafts objects and launch them to do missions.");
 
+        /**
+         * Represents a loop to ask the user if they want to continue or abort
+         */
         while(true) {
 
+            /**
+             * Taking the data entered by the user
+             */
             System.out.print("\nEnter spacecraft name (Apollo) or 'exit' to terminate program: ");
             String shipName = input.next();
             if (shipName.equals("exit")){break;}
@@ -34,10 +44,16 @@ public class Main {
                 shipMass = input.nextDouble();
             }
 
-
+            /**
+             * Asking the user if the mission is manned
+             */
             // MANNED
             System.out.print("This spacecraft is manned (y/n): ");
             String mannedCraft = input.next();
+
+            /**
+             * Represents taking the data entered by the user for manned mission
+             */
             while (!mannedCraft.equals("y") && !mannedCraft.equals("n")) {
                 System.out.print("This spacecraft is manned (y/n): ");
                 mannedCraft = input.next();
@@ -74,10 +90,15 @@ public class Main {
 
             }
 
-
+            /**
+             * Asking the user if the mission is unmanned
+             */
             // UNMANNED
             if (mannedCraft.equals("n")) {
 
+                /**
+                 * Taking the data entered by the user for unmanned mission
+                 */
                 // Ask for astronomical object for study
                 System.out.print("Enter name of astronomical object for study: ");
                 String Astro = input.next();
@@ -90,7 +111,9 @@ public class Main {
                     typeUnmanned = input.nextInt();
                 }
 
-
+                /**
+                 * Represents a switch case to decide the type of spacecraft for the mission
+                 */
                 // Create unmanned spacecraft object
                 // This could use less lines of code,
                 // but as an abstract class is mandatory in this HomeWork, the instancing is forbidden.

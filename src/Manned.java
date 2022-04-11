@@ -1,10 +1,21 @@
 public class Manned implements iSpaceCraft{
 
+    /**
+     * Represents the Manned Mission
+     */
+
+
+    /**
+     * Set variables for manned mission
+     */
     public int crewSize;
     public String shipName, originCountry;
     public int propellantType, task;
     public double shipMass, maxThrust;
 
+    /**
+     * Set object for manned mission SpaceCraft
+     */
     // Object SpaceCraft
     public Manned(int task, int crewSize, String shipName, String originCountry, int propellantType, double maxThrust, double shipMass){
         this.task = task;
@@ -16,6 +27,9 @@ public class Manned implements iSpaceCraft{
         this.shipMass = shipMass;
     }
 
+    /**
+     * Set the message for launch mission
+     */
     @Override
     public String launchMission() {
         String mission = "";
@@ -25,6 +39,9 @@ public class Manned implements iSpaceCraft{
         return this.shipName + "'s crew takes off on mission type: " + mission;
     }
 
+    /**
+     * Set the message to abort mission
+     */
     @Override
     public String abortMission() {
         return "Abort mission: initialize evacuation protocol.";
